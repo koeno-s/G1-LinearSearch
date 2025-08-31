@@ -52,13 +52,11 @@ int main()
     cout << string(row, '*') << endl;
     cout << "Choice: ";
     cin >> choice;
-    cout << endl;
     choice = toupper(choice);
     if (choice == 'S')
     {
       cout << "Search: ";
       cin >> searchItem;
-      cout << endl;
       itemIndex = linearSearch(books, searchItem);
       if(itemIndex == -1)
       {

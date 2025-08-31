@@ -50,13 +50,15 @@ int main()
     cout << "* <S>earch" << string(14, ' ') << "*" << endl;;
     cout << "* <Q>uit" << string(16, ' ') << "*" << endl;;
     cout << string(row, '*') << endl;
-    cout << "Choice: " << endl;
+    cout << "Choice: ";
     cin >> choice;
+    cout << endl;
     choice = toupper(choice);
     if (choice == 'S')
     {
-      cout << "Search: " << endl;
+      cout << "Search: ";
       cin >> searchItem;
+      cout << endl;
       itemIndex = linearSearch(books, searchItem);
       if(itemIndex == -1)
       {

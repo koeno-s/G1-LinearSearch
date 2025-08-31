@@ -1,15 +1,16 @@
-/*
-  CS1B – G1: Linear Search
-  Partner A: Sean Hanabusa (ID) — role: driver
-  Partner B: Kayden Tarvaran (ID) — role: function
-  Date: 2025‑09‑02
-  Purpose: Case‑insensitive substring linear search over book titles.
-  Build:   g++ -std=c++20 main.cpp search.cpp -o search
-*/
+/*********************************************************************
+* CS1B – G1: Linear Search
+*  Partner A: Sean Hanabusa (ID) — role: driver
+*  Partner B: Kayden Tarvaran (ID) — role: function
+*  Date: 2025‑09‑02
+*  Purpose: Case‑insensitive substring linear search over book titles.
+*  Build:   g++ -std=c++20 main.cpp search.cpp -o search
+***********************************************************************/
 #include "search.h"
 #include <iostream>
 #include <iomanip>
-#inclue <cctype>
+#include <cctype>
+#include <vector>
 using namespace std;
 int main()
 {
@@ -37,7 +38,34 @@ int main()
         "C++ Programming: From Problem Analysis to Program Design 7th Edition",
         "Digital Computer Electronics",
         "Assembly Language for x86 Processors (7th Edition)"
-    };
-  
+  };
+  int itemIndex; 
   //Output menu 
+  int row = 25; // Lenght of output row
+  do
+  {
+    cout << string(row, '*') << endl;
+    cout << "*" << string(6, ' ') << "Linear Search" << string(5, ' ') << "*" << endl;
+    cout << string(row, '*') << endl;
+    cout << "* <S>earch" << string(14, ' ') << "*" << endl;;
+    cout << "* <Q>uit" << string(16, ' ') << "*" << endl;;
+    cout << string(row, '*') << endl;
+    cout << "Choice: " << endl;
+    cin >> choice;
+    choice = toupper(choice);
+    if (choice == 'S')
+    {
+      cout << "Search: " << endl;
+      cin >> searchItem;
+      itemIndex = linearSearch(books, searchItem);
+      if(itemIndex == -1)
+      {
+        cout << searchItem << " was not found!" << endl;
+      }
+      else 
+      {
+        cout << "FOUND: " << books[itemIndex] << "   " << "index=" << itemIndex << endl;
+      }
+    }
+  } while (choice != 'Q');
 }

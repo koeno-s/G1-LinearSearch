@@ -67,5 +67,6 @@ int main()
         cout << "FOUND: " << books[itemIndex] << "   " << "index=" << itemIndex << endl;
       }
     }
+    cout << endl;
   } while (choice != 'Q');
 }

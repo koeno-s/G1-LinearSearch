@@ -42,14 +42,14 @@ int main()
   int itemIndex; 
   //Output menu 
   int row = 25; // Lenght of output row
+  cout << string(row, '*') << endl;
+  cout << "*" << string(6, ' ') << "Linear Search" << string(5, ' ') << "*" << endl;
+  cout << string(row, '*') << endl;
+  cout << "* <S>earch" << string(14, ' ') << "*" << endl;;
+  cout << "* <Q>uit" << string(16, ' ') << "*" << endl;;
+  cout << string(row, '*') << endl;
   do
   {
-    cout << string(row, '*') << endl;
-    cout << "*" << string(6, ' ') << "Linear Search" << string(5, ' ') << "*" << endl;
-    cout << string(row, '*') << endl;
-    cout << "* <S>earch" << string(14, ' ') << "*" << endl;;
-    cout << "* <Q>uit" << string(16, ' ') << "*" << endl;;
-    cout << string(row, '*') << endl;
     cout << "Choice: ";
     cin >> choice;
     choice = toupper(choice);

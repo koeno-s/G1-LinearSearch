@@ -13,11 +13,15 @@ using namespace std;
 #include <vector>
 #include <string>
 #include <cctype>
+#include <iomanip>
 
 //Linear search function
 int linearSearch(const vector<string>& list, const string& key){
 
     //Defining temp variables
+    int input = -1;
+    vector<int> choice;
+    choice.reserve(20);
     string title = "";
     string lowercaseKey = key;
 
@@ -35,10 +39,22 @@ int linearSearch(const vector<string>& list, const string& key){
         }
         if (title.find(lowercaseKey) != string::npos){
 
-            return i;
+            choice.push_back(i);
+            
         }
     }
-    return -1;
+
+    cout << endl << "Input ChoiceCode of the book you are looking for" << endl;
+    cout << "------------------------------------------------" << endl;
+    cout << left << setw(80) << "Name" << "ChoiceCode" << endl;
+    for (auto g : choice){
+        cout << setw(80) << list[g]<< g << endl;
+    }
+    cout << setw(80) << "Book Not Found" << "-1" << endl;
+
+    cin >> input;
+
+    return input;
 
 }
 

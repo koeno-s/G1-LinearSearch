@@ -12,6 +12,7 @@
 #include <cctype>
 #include <vector>
 using namespace std;
+
 int main()
 {
   //Data Dictionary 

@@ -38,12 +38,13 @@ int linearSearch(const vector<string>& list, const string& key){
             c = tolower(c);
         }
         if (title.find(lowercaseKey) != string::npos){
-
+            //Adding to matched name list
             choice.push_back(i);
             
         }
     }
 
+    //Outputing all candidates and letting user choose which one they want
     cout << endl << "Input ChoiceCode of the book you are looking for" << endl;
     cout << "------------------------------------------------" << endl;
     cout << left << setw(80) << "Name" << "ChoiceCode" << endl;
